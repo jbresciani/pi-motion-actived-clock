@@ -1,0 +1,16 @@
+[Unit]
+Description=Pi Clock
+Documentation=See Jacob
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+ExecStart=/home/pi/clock/clock.py
+Restart=on-failure
+RestartSec=30s
+SyslogFacility=local1
+SyslogIdentifier=piClock
+
+[Install]
+WantedBy=multi-user.target
